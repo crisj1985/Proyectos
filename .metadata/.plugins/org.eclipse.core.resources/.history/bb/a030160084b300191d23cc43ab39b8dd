@@ -1,0 +1,20 @@
+package com.spring.ejemplo02;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name="personas")
+public class Persona 
+{
+	@Id
+	@Column
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	private int Id;
+	
+	@Column
+	private String nombre;
+	
+	@Column
+	private String apellido;
+
+}

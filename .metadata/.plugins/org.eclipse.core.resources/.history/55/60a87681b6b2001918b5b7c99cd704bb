@@ -1,0 +1,7 @@
+package com.repaso.ejemplo01;
+
+import org.springframework.data.repository.Repository;
+
+public class PersonaRepository implements Repository<Persona, Integer>{
+
+}

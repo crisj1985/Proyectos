@@ -1,0 +1,2 @@
+eclipse.preferences.version=1
+prefWatchExpressions=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<watchExpressions>\r\n<expression enabled\="true" text\="new PersonaDao ().listar();"/>\r\n<expression enabled\="true" text\="con \= conectar.getConexion();"/>\r\n<expression enabled\="true" text\="Connection con \= conectar.getConexion();"/>\r\n</watchExpressions>\r\n

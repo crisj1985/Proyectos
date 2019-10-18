@@ -1,0 +1,7 @@
+package com.spring.ejemplo02;
+
+import org.springframework.data.repository.Repository;
+
+public interface PersonaRepository extends Repository<Persona, Integer>{
+
+}

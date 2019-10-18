@@ -1,0 +1,11 @@
+INDEX VERSION 1.131
+C:\Users\CRISTIAN\Documents\workspace-spring-tool-suite-4-4.3.0.RELEASE\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3545658686.index
+\CrudWeb\src
+C:\Users\CRISTIAN\Documents\workspace-spring-tool-suite-4-4.3.0.RELEASE\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2101620256.index
+\CrudWeb\src
+C:\Users\CRISTIAN\Documents\workspace-spring-tool-suite-4-4.3.0.RELEASE\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3090119606.index
+\CrudMvc\src
+C:\Users\CRISTIAN\Documents\workspace-spring-tool-suite-4-4.3.0.RELEASE\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1537822380.index
+\CrudMvc\src
+C:\Users\CRISTIAN\Documents\workspace-spring-tool-suite-4-4.3.0.RELEASE\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2269140212.index
+\CrudWeb\src

@@ -1,0 +1,69 @@
+package modelo;
+
+import java.io.IOException;
+import java.sql.*;
+import java.util.*;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class controlador
+ */
+@WebServlet("/controlador")
+public class controlador extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+Persona p = new Persona();
+PersonaDao pDao = new PersonaDao();
+Conexion c = new Conexion();
+PreparedStatement ps;
+Connection con;
+	
+	
+    public controlador() {
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		List<Persona> lstPersona = new ArrayList <>();
+		String accion = request.getParameter("accion");
+		
+		switch(accion)
+		{
+			case "Listar":
+				lstPersona = pDao.Listar();
+				request.setAttribute("datos", lstPersona);
+				request.getRequestDispatcher("index.jsp").forward(request, response);
+			case "Nuevo":
+				request.getRequestDispatcher("add.jsp").forward(request, response);
+			case "Guardar":
+		
+			case "Editar":
+				String idP = request.getParameter("id");
+				Persona p = new Persona();
+				p = pDao.buscarPersonaId(Integer.parseInt(idP));
+				
+		
+		}
+		
+		
+		
+	}
+
+}

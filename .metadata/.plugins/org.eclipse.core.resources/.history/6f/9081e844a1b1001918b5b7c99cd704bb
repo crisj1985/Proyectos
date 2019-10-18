@@ -1,0 +1,92 @@
+package modelo;
+
+import java.sql.*;
+import java.util.*;
+
+public class PersonaDao 
+{
+	
+	
+	Conexion c = new Conexion();
+	PreparedStatement ps;
+	ResultSet rs;
+	Connection con;
+	
+	public List<Persona> Listar() 
+	{
+		
+		List <Persona> objPer = new ArrayList<>(); 
+		try {
+			con=c.conectar();
+			ps=con.prepareStatement("select * from personas");
+			rs = ps.executeQuery();
+
+			
+			while (rs.next())
+			{
+				Persona p = new Persona();
+				p.setId(rs.getInt(1));
+				p.setNombre(rs.getString(2));
+				p.setApellidos(rs.getString(3));
+				objPer.add(p);
+				
+			}
+			
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		return objPer;
+	}
+	
+	public Persona buscarPersonaId (int id)
+	{
+		Persona objPer = new Persona();
+		try 
+		{
+			con = c.conectar();
+			ps = con.prepareStatement("select * from personas where index = " + id);
+			rs = ps.executeQuery();
+			
+			while(rs.next())
+			{
+				objPer.setId(rs.getInt(1));
+				objPer.setNombre(rs.getString(2));
+				objPer.setApellidos(rs.getString(3));
+				
+			}
+			
+		} catch (Exception e) 
+		{
+			// TODO: handle exception
+		}
+		return objPer;
+	}
+	
+	public int agregar (Persona p) 
+	{
+		int r = 0;
+		try {
+			
+			String nombre = p.getNombre();
+			String apellido = p.getApellidos();
+			con = c.conectar();
+			ps = con.prepareStatement("insert into personas (name,apellidos) values (?,?)");
+			ps.setString(1,nombre);
+			ps.setString(1,apellido);
+			r = ps.executeUpdate();
+			
+			if(r==1)
+				r=1;
+			else
+				r=0;
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return r;
+	}
+	
+
+}
